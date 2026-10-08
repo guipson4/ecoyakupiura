@@ -492,7 +492,7 @@
 
     .products-hero-img { border-radius: 10px; overflow: hidden; margin-bottom: 52px; border: 1px solid var(--twilight); box-shadow: 0 0 60px rgba(79,79,128,.15); }
     .products-hero-img img { width: 100%; display: block; max-height: 480px; object-fit: contain; background: var(--graphite); }
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; max-width: 960px; }
     .prod-card { background: var(--card-halo); border-radius: 10px; overflow: hidden; border: 1px solid var(--twilight); transition: border-color .2s; display: flex; flex-direction: column; }
     .prod-card:hover { border-color: var(--iris); }
     .prod-img { height: 200px; overflow: hidden; background: var(--graphite); display: flex; align-items: center; justify-content: center; position: relative; }
@@ -792,19 +792,13 @@
     <h2 class="stitle">Bidón de <span class="kw">Agua Pura 20 Litros en Piura</span></h2>
     <p class="ssub">Agua ozonizada, sin sodio y libre de impurezas en bidones de 20 litros. Para tu hogar, tu oficina o tu negocio en Piura. Entrega en menos de 24 horas.</p>
 
-    <div class="products-hero-img fade-up">
-      <img src="imagen1.png.jpeg"
-           alt="ECO YAKU — Bidón de agua pura 20 litros en Piura. Ozonizada, sin sodio, libre de impurezas. Entrega a domicilio."
-           loading="lazy" width="900" height="480" />
-    </div>
-
-    <div class="products-grid" style="max-width:520px">
+    <div class="products-grid">
       <article class="prod-card fade-up">
-        <div class="prod-img" style="height:280px">
-          <img src="imagen1.png.jpeg" alt="Bidón de Agua Pura ECO YAKU 20 Litros — Ozonizada sin sodio, entrega a domicilio en Piura" style="width:100%;height:100%;object-fit:contain;background:#e8f4fc" />
+        <div class="prod-img" style="height:320px">
+          <img src="imagen1.png.jpeg" alt="Bidón de Agua Pura ECO YAKU 20 Litros — Ozonizada sin sodio, entrega a domicilio en Piura" style="width:100%;height:100%;object-fit:cover" />
           <div class="prod-badge-wrap">
             <span class="prod-badge alt">20 Litros</span>
-            <span class="prod-badge" style="background:linear-gradient(135deg,var(--verde-eco),var(--azul-turq))">⭐ Más Pedido</span>
+            <span class="prod-badge">⭐ Más Pedido</span>
           </div>
         </div>
         <div class="prod-body">
@@ -833,84 +827,84 @@
 <section id="clientes" style="background:var(--graphite);padding:56px 0;overflow:hidden;border-bottom:1px solid var(--br)">
   <div style="max-width:1100px;margin:0 auto;padding:0 5vw;text-align:center;margin-bottom:36px">
     <div class="tag" style="justify-content:center;margin-bottom:12px">Confían en nosotros</div>
-    <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);font-weight:300;color:var(--c);letter-spacing:-.01em;margin-bottom:10px">Empresas que eligen <strong style="font-weight:500">ECO YAKU</strong> en Piura</h2>
+    <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:var(--vellum);letter-spacing:-.03em;margin-bottom:10px">Empresas que eligen <strong style="font-weight:800">ECO YAKU</strong> en Piura</h2>
     <p style="font-size:.88rem;color:var(--mu);max-width:480px;margin:0 auto;line-height:1.7">Hoteles, colegios, clínicas y retail de toda la región ya reciben agua certificada.</p>
   </div>
   <div class="logo-ticker-wrap">
     <div class="logo-ticker" id="logoTicker">
       <!-- Row 1 -->
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg"><text x="60" y="30" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="15" fill="#fcfcfc">UPAO</text><text x="60" y="44" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#757580">Educación Superior</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg"><text x="60" y="30" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="15" fill="#a0b8f0">UPAO</text><text x="60" y="44" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#757580">Educación Superior</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
+      <div class="logo-tile">
         <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="6" width="132" height="38" rx="4" fill="#CC0000"/><text x="70" y="29" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#fff">Scotiabank</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="25" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="20" fill="#006747">falabella</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">SAGA · Piura</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="25" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="20" fill="#4db88a">falabella</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#757580">SAGA · Piura</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 130 50" xmlns="http://www.w3.org/2000/svg"><circle cx="65" cy="22" r="14" fill="#00A1C9" opacity=".15"/><text x="65" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="12" fill="#00A1C9">GRUPO AUNA</text><text x="65" y="42" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">Red de Salud</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 130 50" xmlns="http://www.w3.org/2000/svg"><circle cx="65" cy="22" r="14" fill="#00A1C9" opacity=".3"/><text x="65" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="12" fill="#6dcaf5">GRUPO AUNA</text><text x="65" y="42" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#757580">Red de Salud</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="8" width="124" height="34" rx="6" fill="#1A5276" opacity=".08"/><text x="70" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#1A5276">CLÍNICA</text><text x="70" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#1A5276">MIRAFLORES</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><text x="70" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#7aadcf">CLÍNICA</text><text x="70" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#7aadcf">MIRAFLORES</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="8" width="124" height="34" rx="6" fill="#1E8449" opacity=".08"/><text x="70" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#1E8449">CLÍNICA</text><text x="70" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#1E8449">MONTEVERDE</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><text x="70" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#6fcf97">CLÍNICA</text><text x="70" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#6fcf97">MONTEVERDE</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="11" fill="#2C3E50">COLEGIO</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="13" fill="#E74C3C">VALLESOL</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="11" fill="#a3a3b3">COLEGIO</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="13" fill="#f48c8c">VALLESOL</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="11" fill="#2C3E50">COLEGIO</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="13" fill="#8E44AD">TURICARA</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="11" fill="#a3a3b3">COLEGIO</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="13" fill="#c49cef">TURICARA</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><text x="70" y="22" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="11" fill="#922B21">Rest.</text><text x="70" y="40" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-weight="bold" font-size="16" fill="#922B21">La Bocca</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><text x="70" y="22" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="11" fill="#a3a3b3">Rest.</text><text x="70" y="40" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-weight="bold" font-size="16" fill="#f08080">La Bocca</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg"><text x="80" y="21" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="9" fill="#784212">BOTEGA</text><text x="80" y="38" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="13" fill="#784212">Capuccino</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg"><text x="80" y="21" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="9" fill="#a3a3b3">BOTEGA</text><text x="80" y="38" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="13" fill="#d4a96b">Capuccino</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="130" height="30" rx="4" fill="#F7C015" opacity=".2"/><text x="75" y="32" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="16" fill="#1a1a1a">BILLABONG</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="32" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="16" fill="#f7d060">BILLABONG</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="22" text-anchor="middle" font-family="Arial,sans-serif" font-weight="400" font-size="12" fill="#C0392B">hush</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#C0392B">puppies</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="22" text-anchor="middle" font-family="Arial,sans-serif" font-weight="400" font-size="12" fill="#a3a3b3">hush</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#e88c8c">puppies</text></svg>
       </div>
       <!-- Duplicated for seamless loop -->
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg"><text x="60" y="30" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="15" fill="#fcfcfc">UPAO</text><text x="60" y="44" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#757580">Educación Superior</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg"><text x="60" y="30" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="15" fill="#a0b8f0">UPAO</text><text x="60" y="44" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#757580">Educación Superior</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
+      <div class="logo-tile">
         <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="6" width="132" height="38" rx="4" fill="#CC0000"/><text x="70" y="29" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#fff">Scotiabank</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="25" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="20" fill="#006747">falabella</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">SAGA · Piura</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="25" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="20" fill="#4db88a">falabella</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#757580">SAGA · Piura</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 130 50" xmlns="http://www.w3.org/2000/svg"><circle cx="65" cy="22" r="14" fill="#00A1C9" opacity=".15"/><text x="65" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="12" fill="#00A1C9">GRUPO AUNA</text><text x="65" y="42" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">Red de Salud</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 130 50" xmlns="http://www.w3.org/2000/svg"><circle cx="65" cy="22" r="14" fill="#00A1C9" opacity=".3"/><text x="65" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="12" fill="#6dcaf5">GRUPO AUNA</text><text x="65" y="42" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#757580">Red de Salud</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="8" width="124" height="34" rx="6" fill="#1A5276" opacity=".08"/><text x="70" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#1A5276">CLÍNICA</text><text x="70" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#1A5276">MIRAFLORES</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><text x="70" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#7aadcf">CLÍNICA</text><text x="70" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#7aadcf">MIRAFLORES</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="8" width="124" height="34" rx="6" fill="#1E8449" opacity=".08"/><text x="70" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#1E8449">CLÍNICA</text><text x="70" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#1E8449">MONTEVERDE</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><text x="70" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#6fcf97">CLÍNICA</text><text x="70" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#6fcf97">MONTEVERDE</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="11" fill="#2C3E50">COLEGIO</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="13" fill="#E74C3C">VALLESOL</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="11" fill="#a3a3b3">COLEGIO</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="13" fill="#f48c8c">VALLESOL</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="11" fill="#2C3E50">COLEGIO</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="13" fill="#8E44AD">TURICARA</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="11" fill="#a3a3b3">COLEGIO</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="13" fill="#c49cef">TURICARA</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><text x="70" y="22" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="11" fill="#922B21">Rest.</text><text x="70" y="40" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-weight="bold" font-size="16" fill="#922B21">La Bocca</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><text x="70" y="22" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="11" fill="#a3a3b3">Rest.</text><text x="70" y="40" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-weight="bold" font-size="16" fill="#f08080">La Bocca</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg"><text x="80" y="21" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="9" fill="#784212">BOTEGA</text><text x="80" y="38" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="13" fill="#784212">Capuccino</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg"><text x="80" y="21" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="9" fill="#a3a3b3">BOTEGA</text><text x="80" y="38" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="13" fill="#d4a96b">Capuccino</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="130" height="30" rx="4" fill="#F7C015" opacity=".2"/><text x="75" y="32" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="16" fill="#1a1a1a">BILLABONG</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="32" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="16" fill="#f7d060">BILLABONG</text></svg>
       </div>
-      <div class="logo-tile" style="background:#fff">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="22" text-anchor="middle" font-family="Arial,sans-serif" font-weight="400" font-size="12" fill="#C0392B">hush</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#C0392B">puppies</text></svg>
+      <div class="logo-tile">
+        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="22" text-anchor="middle" font-family="Arial,sans-serif" font-weight="400" font-size="12" fill="#a3a3b3">hush</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#e88c8c">puppies</text></svg>
       </div>
     </div>
   </div>

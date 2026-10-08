@@ -482,13 +482,16 @@
     .logo-ticker:hover { animation-play-state: paused; }
     @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .logo-tile {
-      flex-shrink: 0; width: 160px; height: 68px;
-      border-radius: 10px; border: 1px solid var(--twilight);
-      background: var(--card-halo);
+      flex-shrink: 0; width: 160px; height: 72px;
+      border-radius: 8px; border: 1px solid rgba(255,255,255,0.12);
+      background: #fff;
       display: flex; align-items: center; justify-content: center;
-      padding: 10px 14px; transition: border-color .15s;
+      padding: 10px 14px; transition: opacity .2s, transform .2s;
+      overflow: hidden; opacity: 0.82;
     }
-    .logo-tile:hover { border-color: var(--iris); }
+    .logo-tile:hover { opacity: 1; transform: scale(1.04); border-color: var(--iris); }
+    .logo-tile img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+    .logo-tile svg text { fill: #1a1a1a !important; }
 
     .products-hero-img { border-radius: 10px; overflow: hidden; margin-bottom: 52px; border: 1px solid var(--twilight); box-shadow: 0 0 60px rgba(79,79,128,.15); }
     .products-hero-img img { width: 100%; display: block; max-height: 480px; object-fit: contain; background: var(--graphite); }
@@ -644,6 +647,33 @@
       cursor: pointer; transition: opacity .15s;
     }
     button[type="submit"]:hover { opacity: .88; }
+  
+    /* Photo gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 10px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .gallery-item {
+      border-radius: 10px; overflow: hidden;
+      aspect-ratio: 4/3;
+      border: 1px solid var(--twilight);
+      cursor: zoom-in;
+      transition: transform .2s, border-color .2s;
+    }
+    .gallery-item:hover { transform: scale(1.02); border-color: var(--iris); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    /* Gallery lightbox */
+    #galleryLightbox {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(4,4,7,0.96); align-items: center; justify-content: center;
+      cursor: zoom-out;
+    }
+    #galleryLightbox.open { display: flex; }
+    #galleryLightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; border-radius: 8px; }
+
   </style>
 
   <script type="application/ld+json">
@@ -824,6 +854,44 @@
 <!-- ══════════════════════════════════════════════
      CLIENTES — Logo ticker
 ════════════════════════════════════════════════ -->
+
+<!-- ══════════════════════════════════════════════
+     GALERÍA DE FOTOS
+════════════════════════════════════════════════ -->
+<section id="galeria" class="section-pad" style="background:var(--void)">
+  <div class="inner" style="text-align:center;margin-bottom:40px">
+    <div class="tag" style="justify-content:center;margin-bottom:10px">Galería</div>
+    <h2 class="stitle">Nuestro Producto en Acción</h2>
+    <p class="ssub" style="max-width:480px;margin:0 auto">Agua ozonizada de la más alta calidad, entregada directamente a tu puerta en Piura.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item" onclick="openLightbox(this)"><img src="imagen3.png.png" alt="Agua ECO YAKU Piura" loading="lazy"/></div>
+    <div class="gallery-item" onclick="openLightbox(this)"><img src="imagen4.png.png" alt="Bidón agua pura" loading="lazy"/></div>
+    <div class="gallery-item" onclick="openLightbox(this)"><img src="imagen5.png.png" alt="Entrega a domicilio Piura" loading="lazy"/></div>
+    <div class="gallery-item" onclick="openLightbox(this)"><img src="imagen6.png.png" alt="Agua ozonizada 20L" loading="lazy"/></div>
+    <div class="gallery-item" onclick="openLightbox(this)"><img src="imagen7.png.png" alt="ECO YAKU calidad" loading="lazy"/></div>
+    <div class="gallery-item" onclick="openLightbox(this)"><img src="imagen8.png.png" alt="Bidón ECO YAKU" loading="lazy"/></div>
+    <div class="gallery-item" onclick="openLightbox(this)"><img src="imagen9.png.png" alt="Agua pura Piura" loading="lazy"/></div>
+    <div class="gallery-item" onclick="openLightbox(this)"><img src="imagen10.png.png" alt="ECO YAKU domicilio" loading="lazy"/></div>
+    <div class="gallery-item" onclick="openLightbox(this)"><img src="imagen11.png.png" alt="Agua limpia Piura" loading="lazy"/></div>
+    <div class="gallery-item" onclick="openLightbox(this)"><img src="imagen12.png.png" alt="Bidón 20L ECO YAKU" loading="lazy"/></div>
+  </div>
+  <div id="galleryLightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt=""/>
+  </div>
+</section>
+<script>
+function openLightbox(el){
+  var img = el.querySelector('img');
+  document.getElementById('lightboxImg').src = img.src;
+  document.getElementById('galleryLightbox').classList.add('open');
+}
+function closeLightbox(){
+  document.getElementById('galleryLightbox').classList.remove('open');
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
+</script>
+
 <section id="clientes" style="background:var(--graphite);padding:56px 0;overflow:hidden;border-bottom:1px solid var(--br)">
   <div style="max-width:1100px;margin:0 auto;padding:0 5vw;text-align:center;margin-bottom:36px">
     <div class="tag" style="justify-content:center;margin-bottom:12px">Confían en nosotros</div>
@@ -833,78 +901,78 @@
   <div class="logo-ticker-wrap">
     <div class="logo-ticker" id="logoTicker">
       <!-- Row 1 -->
-      <div class="logo-tile">
-        <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg"><text x="60" y="30" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="15" fill="#a0b8f0">UPAO</text><text x="60" y="44" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#757580">Educación Superior</text></svg>
+      <div class="logo-tile" style="background:var(--card-halo)">
+        <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg"><text x="60" y="30" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="15" fill="#4a6fa5">UPAO</text><text x="60" y="44" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">Educación Superior</text></svg>
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="6" width="132" height="38" rx="4" fill="#CC0000"/><text x="70" y="29" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#fff">Scotiabank</text></svg>
+        <img src="logo_scotiabank.png" alt="Scotiabank" />
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="25" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="20" fill="#4db88a">falabella</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#757580">SAGA · Piura</text></svg>
+        <img src="logo_falabella.png" alt="Falabella" />
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 130 50" xmlns="http://www.w3.org/2000/svg"><circle cx="65" cy="22" r="14" fill="#00A1C9" opacity=".3"/><text x="65" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="12" fill="#6dcaf5">GRUPO AUNA</text><text x="65" y="42" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#757580">Red de Salud</text></svg>
+        <img src="logo_auna.png" alt="Auna Salud" />
+      </div>
+      <div class="logo-tile" style="background:var(--card-halo)">
+        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><text x="70" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#3a8fc0">CLÍNICA</text><text x="70" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#3a8fc0">MIRAFLORES</text></svg>
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><text x="70" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#7aadcf">CLÍNICA</text><text x="70" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#7aadcf">MIRAFLORES</text></svg>
+        <img src="logo_monteverde.png" alt="Centro Médico Monteverde" />
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><text x="70" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#6fcf97">CLÍNICA</text><text x="70" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#6fcf97">MONTEVERDE</text></svg>
+        <img src="logo_vallesol.png" alt="Colegio Vallesol" />
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="11" fill="#a3a3b3">COLEGIO</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="13" fill="#f48c8c">VALLESOL</text></svg>
+        <img src="logo_turicara.png" alt="Colegio Turicará" />
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="11" fill="#a3a3b3">COLEGIO</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="13" fill="#c49cef">TURICARA</text></svg>
+        <img src="logo_labocca.png" alt="La Bocca Restaurant" />
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><text x="70" y="22" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="11" fill="#a3a3b3">Rest.</text><text x="70" y="40" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-weight="bold" font-size="16" fill="#f08080">La Bocca</text></svg>
+        <img src="logo_bottega.png" alt="Bottega Capuccino" />
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg"><text x="80" y="21" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="9" fill="#a3a3b3">BOTEGA</text><text x="80" y="38" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="13" fill="#d4a96b">Capuccino</text></svg>
+        <img src="logo_billabong.png" alt="Billabong" />
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="32" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="16" fill="#f7d060">BILLABONG</text></svg>
+        <img src="logo_hushpuppies.png" alt="Hush Puppies" />
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="logo-tile" style="background:var(--card-halo)">
+        <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg"><text x="60" y="30" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="15" fill="#4a6fa5">UPAO</text><text x="60" y="44" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#888">Educación Superior</text></svg>
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="22" text-anchor="middle" font-family="Arial,sans-serif" font-weight="400" font-size="12" fill="#a3a3b3">hush</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#e88c8c">puppies</text></svg>
-      </div>
-      <!-- Duplicated for seamless loop -->
-      <div class="logo-tile">
-        <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg"><text x="60" y="30" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="15" fill="#a0b8f0">UPAO</text><text x="60" y="44" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#757580">Educación Superior</text></svg>
+        <img src="logo_scotiabank.png" alt="Scotiabank" />
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="6" width="132" height="38" rx="4" fill="#CC0000"/><text x="70" y="29" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#fff">Scotiabank</text></svg>
+        <img src="logo_falabella.png" alt="Falabella" />
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="25" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="20" fill="#4db88a">falabella</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#757580">SAGA · Piura</text></svg>
+        <img src="logo_auna.png" alt="Auna Salud" />
+      </div>
+      <div class="logo-tile" style="background:var(--card-halo)">
+        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><text x="70" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#3a8fc0">CLÍNICA</text><text x="70" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#3a8fc0">MIRAFLORES</text></svg>
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 130 50" xmlns="http://www.w3.org/2000/svg"><circle cx="65" cy="22" r="14" fill="#00A1C9" opacity=".3"/><text x="65" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="12" fill="#6dcaf5">GRUPO AUNA</text><text x="65" y="42" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#757580">Red de Salud</text></svg>
+        <img src="logo_monteverde.png" alt="Centro Médico Monteverde" />
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><text x="70" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#7aadcf">CLÍNICA</text><text x="70" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#7aadcf">MIRAFLORES</text></svg>
+        <img src="logo_vallesol.png" alt="Colegio Vallesol" />
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><text x="70" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#6fcf97">CLÍNICA</text><text x="70" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#6fcf97">MONTEVERDE</text></svg>
+        <img src="logo_turicara.png" alt="Colegio Turicará" />
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="11" fill="#a3a3b3">COLEGIO</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="13" fill="#f48c8c">VALLESOL</text></svg>
+        <img src="logo_labocca.png" alt="La Bocca Restaurant" />
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="11" fill="#a3a3b3">COLEGIO</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="13" fill="#c49cef">TURICARA</text></svg>
+        <img src="logo_bottega.png" alt="Bottega Capuccino" />
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><text x="70" y="22" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="11" fill="#a3a3b3">Rest.</text><text x="70" y="40" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-weight="bold" font-size="16" fill="#f08080">La Bocca</text></svg>
+        <img src="logo_billabong.png" alt="Billabong" />
       </div>
       <div class="logo-tile">
-        <svg viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg"><text x="80" y="21" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="9" fill="#a3a3b3">BOTEGA</text><text x="80" y="38" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="13" fill="#d4a96b">Capuccino</text></svg>
-      </div>
-      <div class="logo-tile">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="32" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="16" fill="#f7d060">BILLABONG</text></svg>
-      </div>
-      <div class="logo-tile">
-        <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg"><text x="75" y="22" text-anchor="middle" font-family="Arial,sans-serif" font-weight="400" font-size="12" fill="#a3a3b3">hush</text><text x="75" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#e88c8c">puppies</text></svg>
+        <img src="logo_hushpuppies.png" alt="Hush Puppies" />
       </div>
     </div>
   </div>
